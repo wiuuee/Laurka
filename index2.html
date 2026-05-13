@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope</title>
+    <style>
+        body {
+            background-color: #f5f5dc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #button {
+            width: 200px;
+            height: 100px;
+            background-color: #ffb6c1;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 10px;
+            color: #fff;
+            transition: opacity 0.5s ease-out;
+           
+        }
+        #content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        #inscription {
+            font-size: 28px;
+            color: #ff69b4;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: none;
+            font-weight: bold;
+            text-align: center;
+        }
+        #rose {
+            transform: scale(0);
+            transition: transform 2s ease-in-out;
+            display: none;
+        }
+            #kliknij {
+                font-size: 15px;
+                color: #575656;
+                margin-top: 2px;
+              
+                
+            }
+                #hope {
+                    font-size: 30px;
+                    color: #fff8fe;
+                   
+                }
+        
+  
+            
+            
+            
+            
+            
+        
+    </style>
+</head>
+<body>
+    
+    <div id="button">
+        <p id="hope">Hope</p>
+        <p id="kliknij">Kliknij przycisk!</p>
+    </div>
+    <div id="content">
+        <div id="inscription"></div>
+        <div id="rose">
+        <svg width="400" height="400" viewBox="0 0 100 100">
+            <!-- lodyga -->
+            <line x1="50" y1="120" x2="50" y2="50" stroke="green" stroke-width="3"/>
+            <!-- lisc -->
+            <ellipse class="leaf" cx="55" cy="75" rx="8" ry="15" fill="green" transform="rotate(45 55 85)"/>
+            <!-- kwiat -->
+            <ellipse cx="50" cy="40" rx="15" ry="25" fill="#ff69b4" transform="rotate(0 50 40)"/>
+            <ellipse cx="50" cy="40" rx="15" ry="25" fill="#ff69b4" transform="rotate(45 50 40)"/>
+            <ellipse cx="50" cy="40" rx="15" ry="25" fill="#ff69b4" transform="rotate(90 50 40)"/>
+            <ellipse cx="50" cy="40" rx="15" ry="25" fill="#ff69b4" transform="rotate(135 50 40)"/>
+            <!-- srodek -->
+            <circle cx="50" cy="40" r="8" fill="#ffff00"/>
+        </svg>
+    </div>
+    </div>
+
+    <script>
+        document.getElementById('button').addEventListener('click', function() {
+            this.style.opacity = '0';
+            setTimeout(() => {
+                this.style.display = 'none';
+                var inscription = document.getElementById('inscription');
+                var rose = document.getElementById('rose');
+                inscription.textContent = 'Cyfrowy kwiat dla Ciebie!';
+                inscription.style.display = 'block';
+                rose.style.display = 'block';
+                rose.offsetHeight;
+                inscription.offsetHeight;
+                rose.style.transform = 'scale(1)';
+                inscription.style.opacity = '1';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
